@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>
-Specs Blog
+Specs Blog - Home
 </title>
 <meta name="charset" content="utf-8">
 <meta name="viewport" content="width='device-width',
@@ -10,6 +10,12 @@ initial-scale=1.0">
 
 <link rel="stylesheet" 
 href="{{ asset('css/responsive-navmenu.css')}}">
+
+ <!-- THE LINE BELOW IS RESPONSIBLE FOR THE BOOTSTRAP--> 
+<link rel="stylesheet" 
+href="{{ asset('bootstrap-502dist/css/bootstrap.min.css') }}">
+<script src="{{ asset('bootstrap-502dist/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/jquery-3.6.0.js') }}"></script>
 <!--add font awesome cdn here  -->
 <link rel="stylesheet" 
 href="{{ asset('fontawesome-free-5-15-4-web/css/all.css') }}">
@@ -18,7 +24,7 @@ href="{{ asset('fontawesome-free-5-15-4-web/css/all.css') }}">
 <body>
 <!--this is the main row-->
 <section  class="nav">
-<!--this is the left item column -->
+<!-- -->
 <nav class="">
 <label for="mchk">
 <span class="nav-item-menubar">
@@ -31,13 +37,9 @@ class="mchkinput"
 <span class="logo">
 Specs Blog
 </span>
-
-
 <!--this is the nav item containers -->
 
 <span class="nav-item-case">
-
-
 <span class="nav-item-link">
 <a href="home/">
 <i class="fa fa-home"></i>Home
@@ -51,7 +53,7 @@ Specs Blog
 
 
 <span class="nav-item-link">
-<a href="userlogin">
+<a href="loginuser">
 <i class="fas fa-sign-out-alt"></i>
 
 Login
@@ -59,7 +61,7 @@ Login
 </span>
 
 <span class="nav-item-link">
-<a href="usersignup">
+<a href="registeruser">
 <i class="fas fa-user-plus"></i>
 Sign up
 </a>
@@ -71,17 +73,12 @@ Sign up
 Log out
 </a>
 </span>
-
-
-
-
 </span>
-
-
 <h4>  Home  </h4>
+</section><!--END NAV BAR-->
 
+@yield('content')
 
-</section>
-
+<!--footer goes here-->
 </body>
 </html>
