@@ -29,7 +29,7 @@ href="{{ asset('fontawesome-free-5-15-4-web/css/all.css') }}">
 class="mchkinput"
 >
 <span class="logo">
-NavMenu Logo
+Specs Blog
 </span>
 
 
@@ -39,19 +39,19 @@ NavMenu Logo
 
 
 <span class="nav-item-link">
-<a href="menu.html">
+<a href="home/">
 <i class="fa fa-home"></i>Home
 </a>
 </span>
 <span class="nav-item-link">
-<a href="topics.html">
+<a href="topics">
 <i class="fa fa-th-list"></i>Topics
 </a>
 </span>
 
 
 <span class="nav-item-link">
-<a href="login.html">
+<a href="userlogin">
 <i class="fas fa-sign-out-alt"></i>
 
 Login
@@ -59,14 +59,14 @@ Login
 </span>
 
 <span class="nav-item-link">
-<a href="signup.html">
+<a href="usersignup">
 <i class="fas fa-user-plus"></i>
 Sign up
 </a>
 </span>
 
 <span class="nav-item-link">
-<a href="logout.html">
+<a href="userlogout">
 <i class="fas fa-sign-out-alt"></i>
 Log out
 </a>
@@ -78,7 +78,7 @@ Log out
 </span>
 
 
-<h4>Signup page </h4>
+<h4>  Home  </h4>
 
 
 </section>

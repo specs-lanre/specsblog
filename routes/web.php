@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,8 @@ use Illuminate\Support\Facades\Route;
  Route::get('/', function () {
     return view('specs-blog.welcome');
  });
+Route::get("home", [BlogController::class,"ViewallTopics"]);
+Route::get("topics", [BlogController::class,"ViewallTopics"]);
+Route::get("readtopic/{topicid}", [BlogController::class,"ReadTopic"]);
+Route::get("posttopic", [BlogController::class,"PostTopic"]);
+Route::get("processposttopic", [BlogController::class,"ProcessPostTopic"]);
