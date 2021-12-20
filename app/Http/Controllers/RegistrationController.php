@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class RegistrationController extends Controller
 {
-    //
+    //THIS WILL SHOW THE FORM
       public function RegisterUser(){
         return view("specs-blog.register");
     }
@@ -41,8 +41,8 @@ class RegistrationController extends Controller
            
         $data = $request->all();
         $check = $this->create($data);
-         
-        return redirect("dashboard")->withSuccess('You have signed-in');
+        Session::flash('message', 'Great Your account was created !');
+        return redirect("bloghome");
     }
 
  public function create(array $data)

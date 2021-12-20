@@ -13,27 +13,35 @@ class SessionController extends Controller
 {
     //
     
-       public function LoginUser(Request $request){
+    public function ShowLoginform(){
+        return view("specs-blog.loginuser");
+    }
+    
+    public function LoginUser(Request $request){
          $request->validate([
             'email' => 'required',
             'password' => 'required',
         ]);   
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('home')
-                        ->withSuccess('Signed in');       }
+            Session::flash('message', 'Great you are logged in!'); 
+            Session::flash('alert-class', 'alert-danger');        
+            return redirect('bloghome');
+                           }
   
-        return redirect("loginuser")->withSuccess('Login details are not valid');
+        Session::flash('message', 'Invalid login details  !'); 
+        Session::flash('alert-class', 'alert-danger'); 
+        return redirect("loginuser");
     }
-    
-       
+      
     
     
     
      public function SignOut() {
         Session::flush();
         Auth::logout();
-  
+        
+        Session::flash('message', 'You logged out  !');
         return Redirect('loginuser');
     }
     
