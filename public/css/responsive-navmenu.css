@@ -1,0 +1,145 @@
+body{padding:0px;
+margin:0px;
+overflow:hidden;
+/*
+height:100vh;display:flex;
+align-items:center;
+justify-content:center;
+*/
+}
+
+nav{
+padding:0px;
+margin:0px;
+background:#555454;	
+}
+
+nav .nav-item-case{
+	transition: all .2s;
+}
+
+h4{position:absolute;padding:15px;
+top:70px;left:0px;color:#fff;
+margin:20px;background:#555454;	}
+
+.logo{
+	display:inline-block;
+padding:10px;
+margin:20px;
+font-size:25px;
+background:#555454;
+color:#eeeded;
+border:solid 1px #eeeded;	
+}
+
+
+.nav-item-link{
+	display:inline-block;
+padding:0px 11px;
+margin:2px;
+font-size:15px;
+background:#555454;
+color:#eeeded;
+border:solid 0px #eeeded;	
+word-spacing:5px;
+}
+
+
+.nav-item-link a{
+	display:inline-block;
+padding:11px;
+margin:2px;
+font-size:15px;
+background:#555454;
+color:#eeeded;
+text-decoration:none;	
+word-spacing:5px;
+}
+
+
+.nav-item-link a:hover{
+background:#eeeded;
+color:#555454;
+}
+
+
+.nav-item-link .fa{
+	margin:0px 8px;
+display:inline-block;
+}
+
+.nav-item-menubar{
+display:none;
+visibility:none;
+opacity:0;
+
+}
+.mxchklabel{
+	width:90%;border:solid 0px #eeeded;
+	display:block;
+	padding:10px;
+	
+}
+.mchkinput{display:none;}
+@media screen and (max-width: 800px){
+.nav-item-link{
+display:none;
+visibility:none;
+opacity:0;
+color:blue;
+}
+nav .nav-item-case{
+width:100%;
+height:100vh;
+display:block;
+padding:0px;
+position:relative;
+left:-100%;
+border:solid 1px black; 	
+	
+}
+
+input[type='checkbox']:checked ~ .nav-item-case 
+{
+padding-top:40px;
+left:0%;
+	
+}
+
+input[type='checkbox']:checked ~ .nav-item-case .nav-item-link
+{
+display:inline-block;
+width:90%;
+padding:10px;
+text-align:center;
+visibility:visible;
+opacity:1.00;
+}
+.nav-item-menubar{
+display:inline-block;
+visibility:visible;
+opacity:1.0;
+width:10%;
+padding:10px;
+font-weight:bolder;
+background:#eeeded;
+color:#555454;
+border:solid 1px #555454; 
+}
+
+.nav-item-menubar:hover{
+background:#555454;
+color:#eeeded;cursor:pointer;
+border:solid 1px #fff; 
+}
+nav{
+	display:block;
+	width:100%;
+text-align:center;
+overflow:visible;
+height:17%;
+position:absolute;
+left:0px;top:0px;
+}	
+	
+}
