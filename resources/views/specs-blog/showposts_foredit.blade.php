@@ -19,47 +19,33 @@ padding:5px 15px;text-align:center;background:#2f72c5;}
 <div align="center" >
     
 <div align="center" style="width:80%;padding:25px 40px;">
-
-    <h2>Listing all topics</h2>
-     @foreach($info as $i)
+    <h2></h2>
+     @foreach($coms as $i)
 <p>
 <span class="blogtopics">{{$i->topic}}
 
-<br> <img src="images/{{$i->imagepath}}" style="width:200px" />
+<br> <img src="/images/{{$i->imagepath}}"
+ style="width:200px" />
 <br>
-<span class="blogauthor"> {{$i->author}}</span>
-
- <span class="blogauthor">Views:{{$i->views}}</span>
+<span class="blogauthor"> {{$i->author}}</span> 
 <span class="blogdate">{{$i->created_at}}</span> 
-<!--THS ONE USES NON AJAX METHOD-->
-<!--
-<a href="readmore/{{$i->id}}">
-<span class="readmore">Readmore </span>
-</a>
--->
-<!--THS ONE USES AJAX METHOD-->
-
-<a href="readmore-ajax/{{$i->id}}">
-<span class="readmore">Readmore </span>
+<hr width="50%">
+<a href="/editpost/{{$i->id}}">
+<span class="readmore">Edit Post</span>
 </a>
 
-
-</span>
-</p>     
- @endforeach
-
-
-
-</div>
-
-<p>
-<div  style="padding:40px;font-size:24px;color:#fff;" > 
-{!!$info->links()!!}
-
-</div>
+<a href="/deletepost/{{$i->id}}">
+<span class="readmore">Delete Post</span>
+</a>
 </p>
 
+</span>
+
+@endforeach
+
+</span>
+
+
 </div>
-
-
+</div>
 @endsection

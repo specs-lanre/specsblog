@@ -17,7 +17,7 @@ class CreateBlogentriesTable extends Migration
             $table->id();
             $table->string('topic');
             $table->string('summary');
-            $table->string('content');
+            $table->longText('content')->change();
             $table->string('author');
             $table->string('imagepath');
             $table->timestamp('created_at')->useCurrent();

@@ -41,19 +41,47 @@ Specs Blog
 
 <span class="nav-item-case">
 <span class="nav-item-link">
-<a href="home/">
+<a href="/bloghome">
 <i class="fa fa-home"></i>Home
 </a>
 </span>
 <span class="nav-item-link">
-<a href="topics">
+<a href="/topics">
 <i class="fa fa-th-list"></i>Topics
 </a>
 </span>
 
 
 <span class="nav-item-link">
-<a href="loginuser">
+<a href="/posttopic">
+<i class="fa fa-th-list"></i>Post Topics
+</a>
+</span>
+
+@if (Auth::check())
+{
+    
+    
+    <span class="nav-item-link">
+<a href="/edituserposts">
+<i class="fas fa-sign-out-alt"></i>
+Edit Posts
+</a>
+</span>
+
+ 
+ <span class="nav-item-link">
+<a href="/logoutuser">
+<i class="fas fa-sign-out-alt"></i>
+Log out
+</a>
+</span>
+}
+
+@else
+    
+<span class="nav-item-link">
+<a href="/loginuser">
 <i class="fas fa-sign-out-alt"></i>
 
 Login
@@ -61,22 +89,30 @@ Login
 </span>
 
 <span class="nav-item-link">
-<a href="registeruser">
+<a href="/registeruser">
 <i class="fas fa-user-plus"></i>
 Sign up
 </a>
 </span>
+@endif
 
-<span class="nav-item-link">
-<a href="userlogout">
-<i class="fas fa-sign-out-alt"></i>
-Log out
-</a>
+
 </span>
-</span>
-<h4>  Home  </h4>
+<h4>  Home  -- 
+@if (Auth::check())
+{
+{{ Auth::user()->email }}
+}
+@else
+    Guest user
+@endif
+</h4>
 </section><!--END NAV BAR-->
-
+@if(Session::has('message'))
+<div align="center">
+<p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+</div>
+@endif
 @yield('content')
 
 <!--footer goes here-->

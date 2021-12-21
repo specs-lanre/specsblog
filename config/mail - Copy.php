@@ -44,9 +44,7 @@ return [
             'timeout' => null,
             'auth_mode' => null,
         ],
-          'sendinblue' => [
-            'transport' => 'sendinblue',
-        ],
+
         'ses' => [
             'transport' => 'ses',
         ],

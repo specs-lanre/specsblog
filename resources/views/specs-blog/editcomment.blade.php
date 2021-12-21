@@ -12,19 +12,17 @@ label{display:block;padding:15px;font-weight:bolder;}
     <h2>Post comment here</h2>
     <form 
     method="post" 
-    action="/doprocesscomment">
+    action="/doprocesseditcomment">
         
         <input type="hidden" name="topic_id"
-        value={{$topic_id}} />
+        value={{$coms->topic_id}} />
+        
+         <input type="hidden" name="comment_id"
+        value={{$coms->id}} />
         {{ csrf_field() }}
         <div class="form-group">
             <label for="name">
-            Posting as
-@if(Auth::user())
-            {{ Auth::user()->email }}
-        @else
-            Guest
-        @endif
+           Editing as {{ Auth::user()->email }}
             </label>
            
         </div>
@@ -32,6 +30,7 @@ label{display:block;padding:15px;font-weight:bolder;}
         <div class="form-group">
             <label for="comment">Comment</label><br>
             <textarea name="comment" rows=8 cols=40>
+            {{$coms->comment}}
             </textarea>
         </div>
 

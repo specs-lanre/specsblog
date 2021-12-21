@@ -31,22 +31,19 @@ padding:5px 15px;text-align:center;background:#2f72c5;}
 <span class="blogdate">{{$i->created_at}}</span>
 
 <p> 
-<span class="blogcontent">{{$i->content}}</span>
-
 </p>
 </span>
 
 
 <hr width=50%>
 <p>
-<a href="/postcomment/{{$i->id}}">
-<span class="readmore">Post Comment 
-<i class="fa fa-pencil-square"></i>
-<i class="fa fa-pencil-square"></i>	
-<i class="fa fa-pencil"></i>
-</span>
+<a href="/editpost/{{$i->id}}">
+<span class="readmore">Edit Post</span>
 </a>
 
+<a href="/deletepost/{{$i->id}}">
+<span class="readmore">Delete Post</span>
+</a>
 </p>
 
 @endforeach
